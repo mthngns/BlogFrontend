@@ -16,9 +16,6 @@ const config: Config = {
       },
     },
     colors: {
-      eterationBlue: "#2A59FE",
-      eterationBlueActive: "#3b65fe",
-      eterationSmoke: "#F9F9F9",
       current: "currentColor",
       black: colors.black,
       white: colors.white,

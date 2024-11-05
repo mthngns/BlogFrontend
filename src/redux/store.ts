@@ -18,9 +18,9 @@ import { blogsReducer } from "./features/blogs/store/blogs";
 import { userReducer } from "./features/user/store/user";
 
 const appReducer = combineReducers({
+  user: userReducer,
   blogs: blogsReducer,
   filters: filtersReducer,
-  user: userReducer,
   [api.reducerPath]: api.reducer,
 });
 
