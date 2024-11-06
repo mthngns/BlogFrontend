@@ -18,7 +18,7 @@ const BlogList = () => {
   }, []);
   if (!mounted) return null;
   return (
-    <div className={roboto.className}>
+    <div className={roboto.className+' flex h-full'}>
       The current theme is: {theme}
       <button onClick={() => setTheme('light')}>Light Mode</button>
       <button onClick={() => setTheme('dark')}>Dark Mode</button>

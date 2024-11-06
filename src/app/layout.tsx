@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Red_Hat_Display } from "next/font/google";
 import "./globals.css";
 import { ReduxProvider } from "@/redux/provider";
 import { ThemeProvider } from "next-themes";
+import MainLayout from "./components/MainLayout/MainLayout";
 
-const inter = Inter({ subsets: ["latin"] });
+const theme_font = Red_Hat_Display({subsets:["latin"]});
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -18,11 +19,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={inter.className}>
-      <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-        <ReduxProvider>
-          {children}
-        </ReduxProvider>
+      <body className={theme_font.className}>
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+          <ReduxProvider>
+            <MainLayout>{children}</MainLayout>
+          </ReduxProvider>
         </ThemeProvider>
       </body>
     </html>
