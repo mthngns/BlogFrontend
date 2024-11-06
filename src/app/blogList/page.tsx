@@ -1,9 +1,12 @@
-import React from 'react'
+import React from "react";
+import Landing from "../components/Landing/Landing";
 
 const BlogList = () => {
   return (
-    <div>BlogList</div>
-  )
-}
+    <div className="h-full">
+      <Landing />
+    </div>
+  );
+};
 
-export default BlogList
+export default BlogList;
