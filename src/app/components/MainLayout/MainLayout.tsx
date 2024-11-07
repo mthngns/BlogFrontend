@@ -2,7 +2,7 @@
 
 import React, { ReactNode } from "react";
 import Header from "@/app/features/Header/Header";
-import Footer from "../Footer/Footer";
+import Footer from "../../features/Footer/Footer";
 
 const MainLayout = ({ children }: { children: ReactNode }) => {
   return (
