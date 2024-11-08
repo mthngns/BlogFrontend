@@ -776,7 +776,7 @@ const SearchBar = () => {
                   key={blog.id}
                   className="flex px-4 py-2 hover:bg-gray-100 dark:hover:bg-slate-700 cursor-pointer border-b dark:border-slate-700"
                 >
-                  <div className="flex items-center gap-x-2">
+                  <div className="flex items-center gap-x-5">
                     <div
                       className="relative w-12 overflow-hidden bg-emeral-400 p-0"
                       style={{ aspectRatio: "1" }}
