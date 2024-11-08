@@ -12,7 +12,7 @@ type BlogCardProps = {
 
 const BlogCard: React.FC<BlogCardProps> = ({ ...data }) => {
   return (
-    <div className="flex-shrink-0 w-1/3 h-full flex gap-y-5 flex-col justify-between p-4 border dark:border-slate-700 text-black dark:text-slate-300">
+    <div className="flex-shrink-0 w-full sm:w-1/2 md:w-1/3 h-full flex gap-y-5 flex-col justify-between p-4 border dark:border-slate-700 text-black dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-950">
         <div className="flex items-center gap-x-2">
             <div
             className="relative w-8 rounded-full overflow-hidden bg-emeral-400 p-0"

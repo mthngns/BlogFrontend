@@ -2,10 +2,10 @@ import React from 'react'
 
 const Landing = () => {
   return (
-    <div className='flex flex-col py-10 overflow-hidden gap-y-10'>
+    <div className='flex flex-col px-4 sm:px-0 py-10 overflow-hidden gap-y-10'>
       <div className='flex gap-x-3 items-center cursor-default'>
-        <h2 className='text-7xl font-bold border-r-8 text-slate-700 dark:text-slate-400 border-slate-700 w-fit pr-2'>blogfront.</h2>
-        <p className='text-slate-500 text-lg whitespace-pre-line leading-6'>{"Life\nHealth\nEconomy\nTechnology\nAnd More..."}</p>
+        <h2 className='text-4xl sm:text-7xl py-3 sm:py-0 font-bold border-r-8 text-slate-700 dark:text-slate-400 border-slate-700 w-fit pr-2'>blogfront.</h2>
+        <p className='text-slate-500 text-sm sm:text-lg whitespace-pre-line leading-4 sm:leading-6'>{"Life\nHealth\nEconomy\nTechnology\nAnd More..."}</p>
       </div>
       <video
         className="w-full max-h-96 object-cover sm:block hidden"
@@ -14,7 +14,7 @@ const Landing = () => {
         muted
       >
         <source src="/video.mp4" type="video/mp4" />
-        Tarayıcınız bu videoyu desteklemiyor.
+        Your Internet Browser is not supported.
       </video>
     </div>
   )
