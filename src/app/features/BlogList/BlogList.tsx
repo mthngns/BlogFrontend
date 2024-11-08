@@ -985,9 +985,9 @@ const BlogList = () => {
 
 
   return (
-    <div className="flex flex-col gap-y-10 w-5/6 text-slate-600 dark:text-slate-400 self-center pb-10 ">
+    <div className="flex flex-col gap-y-10 w-full lg:w-5/6 text-slate-600 dark:text-slate-400 self-center pb-10 ">
 
-      <div className="w-full border p-10 dark:border-slate-700">
+      <div className="w-full border p-4 sm:p-10 dark:border-slate-700">
         <h2 className=" mb-3 dark:text-slate-200 text-3xl font-extrabold underline">
           Technology ({technologyBlogs.length})
         </h2>
@@ -1004,7 +1004,7 @@ const BlogList = () => {
         </div>
       </div>
 
-      <div className="w-full border p-10 dark:border-slate-700">
+      <div className="w-full border p-4 sm:p-10 dark:border-slate-700">
         <h2 className=" mb-3 dark:text-slate-200 text-3xl font-extrabold underline">
           Health ({healthBlogs.length})
         </h2>
@@ -1021,7 +1021,7 @@ const BlogList = () => {
         </div>
       </div>
 
-      <div className="w-full border p-10 dark:border-slate-700">
+      <div className="w-full border p-4 sm:p-10 dark:border-slate-700">
         <h2 className=" mb-3 dark:text-slate-200 text-3xl font-extrabold underline">
           Nature ({natureBlogs.length})
         </h2>
@@ -1038,7 +1038,7 @@ const BlogList = () => {
         </div>
       </div>
 
-      <div className="w-full border p-10 dark:border-slate-700">
+      <div className="w-full border p-4 sm:p-10 dark:border-slate-700">
         <h2 className=" mb-3 dark:text-slate-200 text-3xl font-extrabold underline">
           Life ({lifeBlogs.length})
         </h2>
@@ -1055,7 +1055,7 @@ const BlogList = () => {
         </div>
       </div>
 
-      <div className="w-full border p-10 dark:border-slate-700">
+      <div className="w-full border p-4 sm:p-10 dark:border-slate-700">
         <h2 className=" mb-3 dark:text-slate-200 text-3xl font-extrabold underline">
           Cooking ({cookingBlogs.length})
         </h2>
@@ -1072,7 +1072,7 @@ const BlogList = () => {
         </div>
       </div>
 
-      <div className="w-full border p-10 dark:border-slate-700">
+      <div className="w-full border p-4 sm:p-10 dark:border-slate-700">
         <h2 className=" mb-3 dark:text-slate-200 text-3xl font-extrabold underline">
           Travel ({travelBlogs.length})
         </h2>
@@ -1089,7 +1089,7 @@ const BlogList = () => {
         </div>
       </div>
 
-      <div className="w-full border p-10 dark:border-slate-700">
+      <div className="w-full border p-4 sm:p-10 dark:border-slate-700">
         <h2 className=" mb-3 dark:text-slate-200 text-3xl font-extrabold underline">
           Economy ({economyBlogs.length})
         </h2>
@@ -1106,7 +1106,7 @@ const BlogList = () => {
         </div>
       </div>
 
-      <div className="w-full border p-10 dark:border-slate-700">
+      <div className="w-full border p-4 sm:p-10 dark:border-slate-700">
         <h2 className=" mb-3 dark:text-slate-200 text-3xl font-extrabold underline">
           Fashion ({fashionBlogs.length})
         </h2>
