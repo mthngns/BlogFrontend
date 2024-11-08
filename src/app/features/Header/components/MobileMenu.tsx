@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import { MdOutlineManageSearch } from "react-icons/md";
-import { IoMdClose } from "react-icons/io";
+import { IoIosClose } from "react-icons/io";
 import AuthMenu from "./AuthMenu";
 import SearchBar from "./SearchBar";
 import ThemeSwitcher from "./ThemeSwitcher";
@@ -20,7 +20,7 @@ const MobileMenu = () => {
           onClick={() => setSideMenuIsOpen(true)}
         />
       ) : (
-        <IoMdClose className="text-white" size={20} onClick={() => setSideMenuIsOpen(false)} />
+        <IoIosClose className="text-white" size={30} onClick={() => setSideMenuIsOpen(false)} />
       )}
       <div
         className={`absolute z-50 top-12 right-0 min-h-screen w-3/4 ${
