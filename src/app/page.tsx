@@ -1,4 +1,4 @@
-import BlogList from "./blogList/page";
+import BlogList from "./blogs/page";
 
 export default function Home() {
   return <BlogList />;
