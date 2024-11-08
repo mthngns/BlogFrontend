@@ -769,14 +769,14 @@ const SearchBar = () => {
       </form>
       <div className="relative text-slate-700 text-xs dark:text-slate-400 z-50">
         {filteredData.length > 0 && (
-          <div className="absolute top-2 left-0 bg-white dark:bg-slate-800 border dark:border-slate-700 rounded-md shadow-lg min-w-full w-80 z-10 max-h-80 overflow-auto">
+          <div className="absolute top-2 left-0 bg-white dark:bg-slate-800 border dark:border-slate-700 rounded-md shadow-lg min-w-full sm:w-80 z-10 max-h-80 overflow-auto">
             <ul className="py-2">
               {filteredData.map((blog: Blog) => (
                 <li
                   key={blog.id}
                   className="flex px-4 py-2 hover:bg-gray-100 dark:hover:bg-slate-700 cursor-pointer border-b dark:border-slate-700"
                 >
-                  <div className="flex items-center gap-x-2">
+                  <div className="flex items-center gap-x-5">
                     <div
                       className="relative w-12 overflow-hidden bg-emeral-400 p-0"
                       style={{ aspectRatio: "1" }}
