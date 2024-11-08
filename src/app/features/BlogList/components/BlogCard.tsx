@@ -48,7 +48,7 @@ const BlogCard: React.FC<BlogCardProps> = ({ ...data }) => {
           {data.blogData.title}
         </h2>
       </div>
-      <div className="flex gap-x-2 border-t pt-2 w-full">
+      <div className="flex gap-x-2 border-t dark:border-slate-700 pt-2 w-full">
         <div className="flex items-center text-sm gap-x-1">
           <IoEyeOutline size={16} />
           <p>{data.blogData.viewCount}</p>
