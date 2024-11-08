@@ -16,7 +16,7 @@ export interface Blog {
   title:string,
   category:string,
   content:string,
-  authorID:string,
+  authorId:string,
   createdAt:string,
   updatedAt:string,
   totalLikes:number,

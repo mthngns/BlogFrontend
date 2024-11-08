@@ -6,7 +6,7 @@ import Footer from "../../features/Footer/Footer";
 
 const MainLayout = ({ children }: { children: ReactNode }) => {
   return (
-    <div className={"w-screen flex flex-col min-h-screen h-screen max-h-screen bg-white dark:bg-slate-900 text-black dark:text-white"}>
+    <div className={"w-screen flex flex-col min-h-screen bg-white dark:bg-slate-900 text-black dark:text-white"}>
       <Header />
       {children}
       <Footer/>
