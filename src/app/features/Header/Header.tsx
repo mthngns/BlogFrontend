@@ -11,7 +11,7 @@ const Header = () => {
     <div className={`py-2 px-4 sm:px-10 h-12 flex gap-x-10 items-center justify-between bg-slate-950 text-white`}>
         <Logo/>
         <NavigationList/>
-        <div className='sm:flex hidden md:w-fit sm:w-full justify-end gap-x-5'>
+        <div className='sm:flex items-center hidden md:w-fit sm:w-full justify-end gap-x-5'>
             <SearchBar/>
             <AuthMenu/>
             <ThemeSwitcher/>
