@@ -1,10 +1,35 @@
-import React from 'react'
+'use client'
+
+import { useLoginMutation } from '@/redux/features/user/services/user';
+import { setUser } from '@/redux/features/user/store/user';
+import React, { useState } from 'react'
+import { useDispatch } from 'react-redux';
 
 interface LoginFormProps {
   setIsLoginFormOpen: React.Dispatch<React.SetStateAction<boolean>>
 }
 
 const LogInForm:React.FC<LoginFormProps> = ({setIsLoginFormOpen}) => {
+  const dispatch = useDispatch();
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [login, { isLoading }] = useLoginMutation();
+
+  const handleLogin = async (e: React.FormEvent) => {
+    e.preventDefault();
+    try {
+      const response = await login({ email, password }).unwrap();
+      if (response) {
+        console.log("Giriş başarılı:", response);
+        dispatch(setUser(response)); 
+        setIsLoginFormOpen(false)
+      } else {
+        alert("Giriş başarısız, kullanıcı bilgilerinizi kontrol edin.");
+      }
+    } catch (error) {
+      alert(`Giriş işlemi sırasında bir hata oluştu:+ ${error}`);
+    }
+  };
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center dark:bg-black dark:bg-opacity-50 bg-slate-400 bg-opacity-50 text-slate-700 dark:text-slate-400">
       <div className="bg-slate-100 dark:bg-slate-900 shadow-2xl border border-slate-400/60 dark:border-slate-700 rounded-lg p-6 w-fit px-12 flex flex-col gap-y-3">
@@ -19,6 +44,8 @@ const LogInForm:React.FC<LoginFormProps> = ({setIsLoginFormOpen}) => {
             name="floating_email"
             id="floating_email"
             placeholder=" "
+            value={email}
+            onChange={(e)=>setEmail(e.target.value)}
             required
           />
           <label
@@ -39,6 +66,8 @@ const LogInForm:React.FC<LoginFormProps> = ({setIsLoginFormOpen}) => {
             id="floating_password"
             placeholder=" "
             required
+            value={password}
+            onChange={(e)=>setPassword(e.target.value)}
             minLength={6}
           />
           <label
@@ -51,20 +80,23 @@ const LogInForm:React.FC<LoginFormProps> = ({setIsLoginFormOpen}) => {
             Password must be at least 6 characters.
           </p>
         </div>
-        <div className='flex gap-x-3 mt-10'>
-          <button
-            onClick={()=>setIsLoginFormOpen(false)}
-            className="text-white w-full bg-blue-700 hover:bg-blue-800 font-medium rounded-md text-sm px-5 py-2 dark:bg-blue-600 dark:hover:bg-blue-700"
-          >
-            Login
-          </button>
-          <button
-            onClick={()=>setIsLoginFormOpen(false)}
-            className="text-white w-fit bg-red-700 hover:bg-red-800 font-medium rounded-md text-sm px-5 py-2 dark:bg-red-600 dark:hover:bg-red-700"
-          >
-            Close
-          </button>
-        </div>
+        <form onSubmit={handleLogin}> 
+          <div className="flex gap-x-3 mt-10">
+            <button
+              type="submit"
+              className="text-white w-full bg-blue-700 hover:bg-blue-800 font-medium rounded-md text-sm px-5 py-2 dark:bg-blue-600 dark:hover:bg-blue-700"
+            >
+              Login
+            </button>
+            <button
+              type="button" 
+              onClick={() => setIsLoginFormOpen(false)}
+              className="text-white w-fit bg-red-700 hover:bg-red-800 font-medium rounded-md text-sm px-5 py-2 dark:bg-red-600 dark:hover:bg-red-700"
+            >
+              Close
+            </button>
+          </div>
+        </form>
       </div>
   </div>
   )

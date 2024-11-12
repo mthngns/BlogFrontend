@@ -5,31 +5,16 @@ import LogInForm from "./components/LogInForm";
 import SignUpForm from "./components/SignUpForm";
 import ImageWithLoader from "../BlogList/components/ImageWithLoader";
 import { User } from "@/app/lib/types";
-import { IoLogOut } from "react-icons/io5";
 import { IoMdLogOut } from "react-icons/io";
+import { useSelector } from "react-redux";
+import { getUser } from "@/redux/features/user/store/user";
+import useLogout from "@/app/utils/logout";
 
 const AuthMenu = () => {
   const [isLoginFormOpen, setIsLoginFormOpen] = useState(false);
   const [isSignUpFormOpen, setIsSignUpFormOpen] = useState(false);
-  const [user, setUser] = useState<User>({
-    "id": "8",
-    "name": "Savannah Larson",
-    "email": "savannah.larson@example.com",
-    "password": "password123",
-    "avatar": "https://randomuser.me/api/portraits/women/8.jpg",
-    "bio": "Health and fitness enthusiast.",
-    "posts": [
-      "28",
-      "29",
-      "30",
-      "31",
-      "32",
-      "33"
-    ],
-    "totalPosts": 6,
-    "totalLikes": 200,
-    "followers": 90
-  })
+  const user: User | null = useSelector(getUser);
+  const logout = useLogout();
   if(user){
     return (
         <div className="flex items-center gap-x-2 cursor-pointer">
@@ -46,7 +31,10 @@ const AuthMenu = () => {
             <h3 className="text-sm">{user.name}</h3>
             <p className="text-xs truncate text-slate-400">{user.bio} asdasdas</p>
           </div>
-          <IoMdLogOut className="text-red-600" size={24}/>
+          <IoMdLogOut className="text-red-600 hover:text-red-400 rounded-full"
+            size={24}
+            onClick={()=>logout()}
+          />
         </div>
     );
   }
