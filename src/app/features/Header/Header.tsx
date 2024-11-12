@@ -2,7 +2,7 @@ import { Lexend_Peta, Montserrat, Red_Hat_Display } from 'next/font/google';
 import React from 'react'
 import NavigationList from './components/NavigationList';
 import SearchBar from './components/SearchBar';
-import AuthMenu from './components/AuthMenu';
+import AuthMenu from '../Authorize/AuthMenu';
 import MobileMenu from './components/MobileMenu';
 import ThemeSwitcher from './components/ThemeSwitcher';
 import Logo from './components/Logo';

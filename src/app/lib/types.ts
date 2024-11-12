@@ -25,6 +25,8 @@ export interface Blog {
   comments:Comments[] | []
 }
 
+export type BlogCategories = "Technology" | "Health" | "Nature" | "Cooking" | "Fashion" | "Life" | "Health" | "Travel" | "Economy";
+
 export interface SortMethod {
   sortBy: "createdAt" | "viewCount" | "totalLikes";
   order: "asc" | "desc";

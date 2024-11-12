@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import { MdOutlineManageSearch } from "react-icons/md";
 import { IoIosClose } from "react-icons/io";
-import AuthMenu from "./AuthMenu";
+import AuthMenu from "../../Authorize/AuthMenu";
 import SearchBar from "./SearchBar";
 import ThemeSwitcher from "./ThemeSwitcher";
 
