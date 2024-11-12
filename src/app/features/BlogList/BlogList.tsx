@@ -1,16 +1,24 @@
 'use client'
 
-import React from "react";
+import React, { useEffect } from "react";
 import BlogCard from "./components/BlogCard";
 import { Blog, BlogCategories, User } from "@/app/lib/types";
 import { FaArrowRight } from "react-icons/fa";
 import { useGetAllBlogsQuery } from "@/redux/features/blogs/services/blogs";
 import { useGetAllUsersQuery } from "@/redux/features/user/services/user";
+import { useDispatch } from "react-redux";
+import { setBlogs } from "@/redux/features/blogs/store/blogs";
 
 const BlogList = () => {
-
+  const dispatch = useDispatch();
   const { data: posts, error: blogError, isLoading: isBlogLoading } = useGetAllBlogsQuery();
   const { data: users, error: userError, isLoading: isUserLoading } = useGetAllUsersQuery();
+
+  useEffect(() => {
+    if (posts) {
+      dispatch(setBlogs(posts));
+    }
+  }, [posts, dispatch]);
 
   if (blogError || userError) {
     return <div>Bir hata oluştu</div>;
