@@ -18,13 +18,13 @@ const BlogCard: React.FC<BlogCardProps> = ({ ...data }) => {
             className="relative w-8 rounded-full overflow-hidden bg-emeral-400 p-0"
             style={{ aspectRatio: "1" }}
             >
-            <ImageWithLoader
-                src={data.author.avatar}
-                alt={data.blogData.title}
-                fill={true}
-                priority={true}
-                isLoading={data.blogData.images[0] ? false : true}
-            />
+              <ImageWithLoader
+                  src={data.author.avatar}
+                  alt={data.blogData.title}
+                  fill={true}
+                  priority={true}
+                  isLoading={data.blogData.images[0] ? false : true}
+              />
             </div>
             <div className="">
             <h2 className="dark:text-white font-bold">{data.author.name}</h2>
