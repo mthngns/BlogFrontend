@@ -23,8 +23,16 @@ export const userApi = api.injectEndpoints({
         return user ? { data: user } : { data: null };
       },
     }),
+
+    createUser: builder.mutation<User, Omit<User, 'id'>>({
+      query: (newUser) => ({
+        url: END_POINTS.authors,  
+        method: 'POST',
+        body: newUser,
+      }),
+    }),
   }),
   overrideExisting: false,
 });
 
-export const { useGetAllUsersQuery, useLoginMutation } = userApi;
+export const { useGetAllUsersQuery, useLoginMutation, useCreateUserMutation } = userApi;

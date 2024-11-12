@@ -8,7 +8,7 @@ import { User } from "@/app/lib/types";
 import { IoMdLogOut } from "react-icons/io";
 import { useSelector } from "react-redux";
 import { getUser } from "@/redux/features/user/store/user";
-import useLogout from "@/app/utils/logout";
+import useLogout from "@/app/hooks/logout";
 
 const AuthMenu = () => {
   const [isLoginFormOpen, setIsLoginFormOpen] = useState(false);
