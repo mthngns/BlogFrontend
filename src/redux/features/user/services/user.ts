@@ -31,8 +31,13 @@ export const userApi = api.injectEndpoints({
         body: newUser,
       }),
     }),
+
+    getUserById: builder.query<User, string>({
+      query: (id) => `${END_POINTS.authors}/${id}`,
+    }),
+
   }),
   overrideExisting: false,
 });
 
-export const { useGetAllUsersQuery, useLoginMutation, useCreateUserMutation } = userApi;
+export const { useGetAllUsersQuery, useLoginMutation, useCreateUserMutation, useGetUserByIdQuery } = userApi;

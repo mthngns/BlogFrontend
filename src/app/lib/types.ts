@@ -21,7 +21,7 @@ export interface Blog {
   updatedAt:string,
   totalLikes:number,
   viewCount:number,
-  images:string | string[],
+  images:string[],
   comments:Comments[] | []
 }
 
