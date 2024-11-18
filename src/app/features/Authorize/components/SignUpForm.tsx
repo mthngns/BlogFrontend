@@ -23,7 +23,6 @@ const SignUpForm: React.FC<SignUpFormProps> = ({ setIsSignUpFormOpen }) => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    // Geçerlilik kontrolleri
     if (password !== rePassword) {
       setErrorMessage('Passwords do not match!');
       return;
@@ -54,7 +53,6 @@ const SignUpForm: React.FC<SignUpFormProps> = ({ setIsSignUpFormOpen }) => {
 
     try {
       const response = await createUser(newUser).unwrap();
-      console.log('User created successfully:', response);
       dispatch(setUser(newUser));
       setIsSignUpFormOpen(false);
     } catch (err) {
