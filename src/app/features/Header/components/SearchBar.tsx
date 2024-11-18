@@ -4,6 +4,7 @@ import { Blog } from "@/app/lib/types";
 import React, { useState } from "react";
 import { IoMdSearch } from "react-icons/io";
 import ImageWithLoader from "../../BlogList/components/ImageWithLoader";
+import Link from "next/link";
 
 const SearchBar = () => {
   const [searchText, setSearchText] = useState("");
@@ -776,7 +777,7 @@ const SearchBar = () => {
                   key={blog.id}
                   className="flex px-4 py-2 hover:bg-gray-100 dark:hover:bg-slate-700 cursor-pointer border-b dark:border-slate-700"
                 >
-                  <div className="flex items-center gap-x-5">
+                  <Link href={`/blog/${blog.id}`} className="flex items-center gap-x-5">
                     <div
                       className="relative w-12 overflow-hidden bg-emeral-400 p-0"
                       style={{ aspectRatio: "1" }}
@@ -797,7 +798,7 @@ const SearchBar = () => {
                         {blog.title}
                       </h2>
                     </div>
-                  </div>
+                  </Link>
                 </li>
               ))}
             </ul>

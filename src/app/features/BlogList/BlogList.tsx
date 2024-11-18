@@ -8,11 +8,12 @@ import { useGetAllBlogsQuery } from "@/redux/features/blogs/services/blogs";
 import { useGetAllUsersQuery } from "@/redux/features/user/services/user";
 import { useDispatch } from "react-redux";
 import { setBlogs } from "@/redux/features/blogs/store/blogs";
+import Spinner from "@/app/components/Spinner/Spinner";
 
 const BlogList = () => {
   const dispatch = useDispatch();
-  const { data: posts, error: blogError, isLoading: isBlogLoading } = useGetAllBlogsQuery();
-  const { data: users, error: userError, isLoading: isUserLoading } = useGetAllUsersQuery();
+  const { data: posts, error: blogError, isLoading: isBlogLoading, refetch:refetchPosts } = useGetAllBlogsQuery();
+  const { data: users, error: userError, isLoading: isUserLoading, refetch:refetchUsers } = useGetAllUsersQuery();
 
   useEffect(() => {
     if (posts) {
@@ -20,12 +21,22 @@ const BlogList = () => {
     }
   }, [posts, dispatch]);
 
+  useEffect(() => {
+    refetchPosts();
+    refetchUsers();
+  }, [refetchPosts, refetchUsers])
+
   if (blogError || userError) {
     return <div>Bir hata oluştu</div>;
   }
 
   if (isBlogLoading || isUserLoading) {
-    return <div>Yükleniyor...</div>;
+    return (
+      <div className="flex items-center flex-col gap-y-10 w-full lg:w-5/6 text-slate-600 dark:text-slate-400 self-center pb-10">
+        <Spinner size="12"/>
+        <h2 className="font-bold">Posts are loading...</h2>
+      </div>
+  );
   }
 
   if (!posts || !users) {

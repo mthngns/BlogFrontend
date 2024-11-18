@@ -1,8 +1,9 @@
+import Link from 'next/link'
 import React from 'react'
 
 const Logo = () => {
   return (
-    <h1 className={`font-bold text-2xl w-fit cursor-pointer`}>blogfront.</h1>
+    <Link href={'/'} className={`font-bold text-2xl w-fit cursor-pointer`}>blogfront.</Link>
   )
 }
 
