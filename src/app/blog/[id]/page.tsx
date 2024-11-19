@@ -37,13 +37,13 @@ const BlogPostPage = () => {
 
 
   return (
-    <div className="grow self-center mt-10 min-h-full w-full text-slate-700 dark:text-slate-400 px-20 flex flex-col py-10">
+    <div className="grow self-center mt-10 min-h-full w-full text-slate-700 dark:text-slate-400 px-4 md:px-20 flex flex-col py-10">
       <Landing video={false} />
-      <div className="flex gap-x-10">
-        <div className="w-4/6  border dark:border-slate-700 p-10">
+      <div className="lg:flex lg:gap-x-10 gap-y-10">
+        <div className="w-full lg:w-4/6  border dark:border-slate-700 p-4 sm:p-10">
           <BlogContent blog={post!} author={user!} refetch={refetch}/>
         </div>
-        <div className="w-2/6  border dark:border-slate-700 py-10 px-5 flex flex-col h-fit gap-y-5">
+        <div className="w-full lg:mt-0 mt-10 lg:w-2/6  border dark:border-slate-700 py-10 px-5 flex flex-col h-fit gap-y-5">
           <h2 className="text-sm font-bold">{post?.comments.length} Comments</h2>
             <CommentCard  blog={post!} refetch={refetch} />
             <BlogMetrics blog={post!}/>

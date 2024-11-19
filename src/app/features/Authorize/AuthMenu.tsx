@@ -30,7 +30,7 @@ const AuthMenu = () => {
           </div>
           <div className="max-w-32 sm:hidden lg:block">
             <h3 className="text-sm">{user.name}</h3>
-            <p className="text-xs truncate text-slate-400">{user.bio}</p>
+            <p className="text-xs truncate text-slate-400 max-w-20">{user.bio}</p>
           </div>
           <IoMdLogOut className="text-red-600 hover:text-red-400 rounded-full"
             size={24}
