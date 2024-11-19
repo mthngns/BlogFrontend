@@ -9,6 +9,7 @@ import { IoMdLogOut } from "react-icons/io";
 import { useSelector } from "react-redux";
 import { getUser } from "@/redux/features/user/store/user";
 import useLogout from "@/app/hooks/logout";
+import Link from "next/link";
 
 const AuthMenu = () => {
   const [isLoginFormOpen, setIsLoginFormOpen] = useState(false);
@@ -17,7 +18,7 @@ const AuthMenu = () => {
   const logout = useLogout();
   if(user){
     return (
-        <div className="flex items-center gap-x-2 cursor-pointer">
+        <Link href={'/account'} className="flex items-center gap-x-2 cursor-pointer">
           <div className="relative w-8 rounded-full overflow-hidden bg-emeral-400 p-0" style={{ aspectRatio: "1" }}>
               <ImageWithLoader
                   src={user.avatar}
@@ -35,7 +36,7 @@ const AuthMenu = () => {
             size={24}
             onClick={()=>logout()}
           />
-        </div>
+        </Link>
     );
   }
   return (

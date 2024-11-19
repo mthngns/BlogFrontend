@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useEffect } from 'react'
+import React from 'react'
 import { useTheme } from 'next-themes';
 import { MdLightMode } from 'react-icons/md';
 import { FaMoon } from 'react-icons/fa';
