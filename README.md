@@ -8,13 +8,7 @@ This project was developed as part of a technical assignment for the **Liberyus*
 
 ## Login or Sign up
 
-You can sign in use with ALL_USERS end point data or create new account. Thanks for your interest.
-
-## Mock API URL
-
-- **All BLOG POSTS** : (https://6728c1716d5fa4901b6ac77e.mockapi.io/blog/posts)
-- **SINGLE BLOG** : (https://6728c1716d5fa4901b6ac77e.mockapi.io/blog/posts/id)
-- **ALL USERS** : (https://6728c1716d5fa4901b6ac77e.mockapi.io/blog/authors)
+You can sign in use with create new account. Thanks for your interest.
 
 ## Features
 
