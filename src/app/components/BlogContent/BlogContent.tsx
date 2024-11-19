@@ -131,16 +131,16 @@ const BlogContent: React.FC<BlogContentProps> = ({
               isLoading={author?.avatar ? false : true}
             />
           </div>
-          <p>{author?.name} / {blog?.category}</p>
+          <p className="text-xs sm:text-base">{author?.name} / {blog?.category}</p>
         </div>
         <div className="items-end flex flex-col"> 
           <p className="text-xs">Created at : {createdAt} </p>
           <p className="text-xs">Last updated at : {updatedAt} </p>
         </div>
       </div>
-      {!editMode && <h1 className="text-5xl font-black border-t dark:border-slate-700 py-5">{blog?.title}</h1>}
+      {!editMode && <h1 className="text-base md:text-5xl font-black border-t dark:border-slate-700 py-5">{blog?.title}</h1>}
       {editMode && 
-      <input className="text-2xl my-5 font-black border dark:border-slate-700 py-5 bg-transparent px-2 dark:bg-slate-800" 
+      <input className="text-base md:text-2xl my-5 font-black border dark:border-slate-700 py-5 bg-transparent px-2 dark:bg-slate-800" 
         placeholder="Change Blog Title..."
         value={editedBlog?.title} 
         onChange={(e)=>{setEditedBlog({...editedBlog, title:e.target.value})}}
@@ -166,9 +166,9 @@ const BlogContent: React.FC<BlogContentProps> = ({
         </div>
       </div>
       }
-      {!editMode && <p className="py-5" dangerouslySetInnerHTML={{__html: blog?.content?.replace(/\n/g, "<br />") || "",}}/>}
+      {!editMode && <p className="py-5 sm:text-base text-xs" dangerouslySetInnerHTML={{__html: blog?.content?.replace(/\n/g, "<br />") || "",}}/>}
       {editMode &&
-      <textarea className="p-5 my-5 min-h-96 bg-transparent border dark:border-slate-700 dark:bg-slate-800"
+      <textarea className="p-5 sm:text-base text-xs my-5 min-h-96 bg-transparent border dark:border-slate-700 dark:bg-slate-800"
         placeholder="Change Blog Content..."
         value={editedBlog?.content}
         onChange={(e)=>{setEditedBlog({...editedBlog, content:e.target.value})}}
