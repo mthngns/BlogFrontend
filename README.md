@@ -6,7 +6,15 @@ This is a dynamic blog application built with [Next.js](https://nextjs.org), uti
 
 This project was developed as part of a technical assignment for the **Liberyus** job application process. It demonstrates key skills in building modern web applications using Next.js, Redux, and TailwindCSS, alongside MockAPI for backend simulation. 
 
----
+## Login or Sign up
+
+You can sign in use with ALL_USERS end point data or create new account. Thanks for your interest.
+
+## Mock API URL
+
+- **All BLOG POSTS** : (https://6728c1716d5fa4901b6ac77e.mockapi.io/blog/posts)
+- **SINGLE BLOG** : (https://6728c1716d5fa4901b6ac77e.mockapi.io/blog/posts/id)
+- **ALL USERS** : (https://6728c1716d5fa4901b6ac77e.mockapi.io/blog/authors)
 
 ## Features
 
@@ -24,9 +32,6 @@ This project was developed as part of a technical assignment for the **Liberyus*
 - 🔐 **User Authentication**: Supports user login and session persistence via Redux Persist.
 - 📦 **MockAPI Integration**: Uses MockAPI for simulating backend data.
 
-
----
-
 ## Tech Stack
 
 - [Next.js 13+ (App Router)](https://nextjs.org)
@@ -34,8 +39,6 @@ This project was developed as part of a technical assignment for the **Liberyus*
 - [RTK Query](https://redux-toolkit.js.org/rtk-query/overview)
 - [TailwindCSS](https://tailwindcss.com/)
 - [MockAPI](https://mockapi.io/)
-
----
 
 ## Getting Started
 
@@ -49,7 +52,7 @@ This project was developed as part of a technical assignment for the **Liberyus*
 Clone the repository and install dependencies:
 
 ```bash
-git clone https://github.com/your-username/BlogFrontend.git
+git clone https://github.com/mthngns/BlogFrontend.git
 cd BlogFrontend
 npm install
 # or
